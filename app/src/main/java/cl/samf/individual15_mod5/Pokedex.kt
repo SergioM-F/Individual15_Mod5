@@ -1,4 +1,4 @@
-package com.example.kotlinexamples
+package cl.samf.individual15_mod5
 
 class Pokedex {
     companion object {

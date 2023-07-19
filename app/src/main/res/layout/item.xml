@@ -20,7 +20,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ConstraintCardViewItem"
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="80dp"
+            android:background="#D84545"
+            android:backgroundTint="#C33939">
 
             <TextView
                 android:id="@+id/textViewItemTipo"
@@ -28,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:text="@string/textview"
+                android:textColor="#FEFEFE"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textViewItemNombre"
@@ -40,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="68dp"
                 android:text="@string/textview"
+                android:textColor="#FEFEFE"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -17,11 +17,17 @@ import cl.samf.individual15_mod5.databinding.ItemBinding
    [] en onCreateViewHolder binding class del item
    [] modificamos el constructor del ViewHolder (View por binding)
    [] binding.root en el viewholder
+   [] se implementa clase onBindViewholder
+   [] en onbindViewHolder se declara val item = listaPokemones.get(position)
+   [] en onBindViewHolder se implementa holder.bind(item)
+   [] se crea la clase bind, con nombres caracteristicos "pokemon"
+   [] se agrega a la clase ViewHolder ("val"
+   [] se crea los binding de los textView en la clase bind
 
  */
 class AdapterRecycler : RecyclerView.Adapter<AdapterRecycler.ViewHolder>(){
 
-    val listaPokemones = mutableListOf<Pokemon>()
+    var listaPokemones = mutableListOf<Pokemon>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -33,10 +39,20 @@ class AdapterRecycler : RecyclerView.Adapter<AdapterRecycler.ViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = listaPokemones[position]
+        holder.bind(item)
     }
 
-    class ViewHolder(binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    fun setData(pokedex: List<Pokemon>) {
+        this.listaPokemones = pokedex.toMutableList()
+
+    }
+
+    class ViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(pokemon: Pokemon) {
+            binding.textViewItemNombre.text=pokemon.nombre
+            binding.textViewItemTipo.text=pokemon.tipo
+        }
 
     }
 }
